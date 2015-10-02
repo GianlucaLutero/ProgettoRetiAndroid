@@ -1,6 +1,17 @@
 Strumenti da utilizzare nel progetto:
 
  -Ambiente di svilupp: Android Studio
+   -- scaricare l'installer per il proprio sistema dal sito https://developer.android.com/sdk/index.html
+
  -Sistema CVS (Control Version System): git
+   -- comandi base:
+         --- git clone git@github.com:GianlucaLutero/ProgettoRetiAndroid.git (Serve per clonare il progetto dal repository usando il protocollo ssh - creare prima una chiave pubblica con il comando
+             ssh-keygen -t rsa )
+         --- git pull (Aggiorna il workspace)
+         --- git add <file> (Aggiunge il file nell'area di stage, se usato con il parametro '.' aggiunge all'area di stage tutti i file modificati)
+         --- git commit (Esegue il commit di tutte le modifiche presenti nell'area di stage)
+         --- git push (Carica le modifiche sul repository principale) 
+
+
  -Software per gestione server:Apache Tomcat(?)
  -Database lato Server: postgres(?)
