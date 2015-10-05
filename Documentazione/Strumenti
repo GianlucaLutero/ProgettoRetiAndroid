@@ -11,7 +11,9 @@ Strumenti da utilizzare nel progetto:
          --- git add <file> (Aggiunge il file nell'area di stage, se usato con il parametro '.' aggiunge all'area di stage tutti i file modificati)
          --- git commit (Esegue il commit di tutte le modifiche presenti nell'area di stage)
          --- git push (Carica le modifiche sul repository principale) 
-
+         --- git log (Mostra la lista dei commit sul repository)
+         --- git diff <commit> <commit> (Mostra le differenze tra due commit sul repository, al posto di <commit> deve essere messo l'id del commit relativo che puo' 
+             essere ottenuto attraverso git log)
 
  -Software per gestione server:Apache Tomcat(?)
  -Database lato Server: postgres(?)
