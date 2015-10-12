@@ -1,0 +1,7 @@
+File in cui vengono annotate le proposte o le idee riguardanti lo sviluppo del progetto
+
+
+Multiplayer
+ -Scegliere tra competitivo o collaborativo.
+  --Competitivo: l'utente potrà sfidare gli altri giocatori in battaglia. Il server deve gestire la creazione della partita, gli inviti alle battaglie e i messaggi scambiati dai due client.
+  --Collaborativo: gli utenti potranno aiutarsi, da decidere ancora come, durante la partita. Il servere deve gestire solo il messaggio di invio dell'aiuto.
