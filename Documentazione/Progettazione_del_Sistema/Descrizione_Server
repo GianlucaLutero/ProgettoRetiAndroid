@@ -1,0 +1,46 @@
+Service dispatcher
+
+La parte del server che fa da interfaccia con il client.
+Il componente riceve le richieste dai client, controlla che siano ben formate e le inoltra ai servizi sottostanti.
+Il componente attende le risposte dai servizi sottostanti e le restituisce ai client.  
+
+Authentication Service
+
+La parte del server che fornisce il servizio di autenticazione.
+
+Riceve le richieste di login dal client e risponde in due possibili modi:
+ - OK : le credenziali sono corrette e l'utente viene segnato come attivo
+ - FAIL : le credenziali non sono corrette
+
+Riceve le richieste di logout esplicito rimuovendo l'utente da quelli attivi e restituendo un messaggio
+di avvenuto logout.
+
+Il servizio gestisce anche la fase di registrazione e cancellazione degli utenti con i relativi controlli.
+
+DB Service
+
+Gestisce la comunicazione con il database.
+Per comunicare con il database è obbligatorio usare questo servizio, ogni altro modo deve essere impedito.
+
+Core App Service
+
+Implementa tutti i servizi lato server dell'applicazione.
+
+
+MSG request
+La forma del messaggio che il client deve inviare deve essere il seguente: <Request_type,Action,Parameters> 
+Request_type: tipo di servizio da usare
+Action: azione che il servizio deve fare
+Parameters: parametri da passare al servizio
+
+Il service dispatcher riceve questi messaggi e in base al Request_type li inoltra ai servizi sottostanti.
+
+MSG response
+La forma del messaggio che il Server deve inviare al Client deve essere il seguente: <Request_result,Response_content>
+Request_result: risposta dei servizi alla richiesta del client
+Request_content: oggetti richiesti dal client
+
+Il service dispatcher attende la risposta dei servizi e le restituisce al client che le ha richieste
+
+
+
