@@ -5,6 +5,8 @@ Vedi il file Strumenti nella sezione documentazione per configurare il proprio a
 
 Nel file Appunti nella sezione documentazione sono annotate le varie idee che si vogliono proporre.
 
+Nella directory Librerie sono state inserite le librerie usate nel progetto
+
 -Version 0.0
 
  Versione iniziale del progetto e test degli strumenti
