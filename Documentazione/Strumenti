@@ -14,6 +14,11 @@ Strumenti da utilizzare nel progetto:
          --- git log (Mostra la lista dei commit sul repository)
          --- git diff <commit> <commit> (Mostra le differenze tra due commit sul repository, al posto di <commit> deve essere messo l'id del commit relativo che puo' 
              essere ottenuto attraverso git log)
-
+         --- git config (configura git, usando l'opzione --global le impostazioni valgono per tutti i progetti)
+              Esempi d'uso: 
+              ---- git config --global user.name "nome utente" (Viene impostato il nome utente)
+              ---- git config --global user.email "email utente" (Viene impostata l'email utente)
+              ---- git config --global core.editor emacs (Viene impostato l'editor di default)
+  
  -Software per gestione server:Apache Tomcat(?)
  -Database lato Server: MySql
