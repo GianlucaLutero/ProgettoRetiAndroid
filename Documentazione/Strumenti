@@ -16,4 +16,4 @@ Strumenti da utilizzare nel progetto:
              essere ottenuto attraverso git log)
 
  -Software per gestione server:Apache Tomcat(?)
- -Database lato Server: postgres(?)
+ -Database lato Server: MySql
