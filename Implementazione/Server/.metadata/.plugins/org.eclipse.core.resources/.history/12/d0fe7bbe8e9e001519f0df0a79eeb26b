@@ -1,0 +1,11 @@
+package gameServer.dataBaseService;
+
+public abstract class DatabaseAbstractManager {
+
+
+	private String url;
+	private String user;
+	private String passw;
+	
+	
+}
