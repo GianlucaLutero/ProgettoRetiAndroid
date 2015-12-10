@@ -29,9 +29,9 @@ public abstract class DatabaseAbstractManager {
 	}
 	
 	/**
-	 * This method creates a database connection between database gioco and this service
+	 * This method creates a database connection between database Gioco and this client
 	 * 
-	 * @return Returns the connection between database and this service
+	 * @return Returns the connection between database and this client
 	 * @exception SQLException
 	 * */
 	public Connection databaseConnect() throws SQLException{
@@ -40,7 +40,7 @@ public abstract class DatabaseAbstractManager {
 	
 
 	/**
-	 * This method disconnect database from the service
+	 * This method disconnect database from this client
 	 * 
 	 * @param Connection connection: a connection between database and client
 	 * @param Statement statement: a statement that executes a sql statement 
