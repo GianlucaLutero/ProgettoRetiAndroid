@@ -13,7 +13,6 @@ INDEX VERSION 1.127+/home/gianluca/Università/Mobdev/Progetto/ProgettoRetiAndro
 4273304223.index
 1737441395.index
 4267884898.index
-939451528.index
 1791498496.index
 2739658178.index
 2421167391.index
