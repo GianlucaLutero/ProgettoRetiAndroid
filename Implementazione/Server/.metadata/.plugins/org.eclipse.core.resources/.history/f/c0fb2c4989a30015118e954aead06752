@@ -5,7 +5,7 @@ import java.util.Date;
 
 import gameServer.ModelloInterfaccia.PlayerInterface;
 import gameServer.ModelloInterfaccia.SfidaInterface;
-// DA VEDERE BENE IL SETTAGGIO DELLA DATA
+
 public class Sfida implements SfidaInterface {
 	PlayerInterface P1;
 	PlayerInterface P2;
