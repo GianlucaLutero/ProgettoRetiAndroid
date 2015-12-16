@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Aggiunto commento al costruttore</message>\n<message>Aggiornamento database service</message>\n<message>Creato progetto GameServer che contiene l&apos;implementazione del server</message>\n</messages>
+=======
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Non ancora completo</message>\n<message>Non ancora completo....</message>\n<message>Creato progetto GameServer che contiene l&apos;implementazione del server</message>\n</messages>
+>>>>>>> 628f41314a20a41e62a17035254f24d776da32fe
 eclipse.preferences.version=1

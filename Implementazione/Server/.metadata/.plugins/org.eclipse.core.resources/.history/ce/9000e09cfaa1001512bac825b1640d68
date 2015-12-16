@@ -1,0 +1,9 @@
+package ModelloInterfaccia;
+
+public UtenteInterface interface {
+
+	String getEmail();
+
+	void setEmail(String email);
+
+}
