@@ -14,9 +14,7 @@ public abstract class DatabaseAbstractManager {
 	private String user;
 	private String passw;
 	
-	/**
-	 * Costruttore della classe
-	 * */
+	
 	protected DatabaseAbstractManager(){
 		ResourceBundle bundle = ResourceBundle.getBundle("configurazione");
 		
