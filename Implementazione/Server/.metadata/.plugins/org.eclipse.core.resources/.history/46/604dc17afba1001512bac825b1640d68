@@ -1,0 +1,13 @@
+package ModelloImplementativo;
+
+import ModelloInterfaccia.PosizioneInterface;
+
+public class Player {
+	String nome;
+	Integer vita;
+	Integer vitalvl;
+	PosizioneInterface coordinate;
+	Integer exp;
+	
+
+}

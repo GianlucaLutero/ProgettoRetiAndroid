@@ -1,0 +1,12 @@
+package ModelloImplementativo;
+
+import java.sql.Time;
+import java.util.Timer;
+
+public class Skill {
+	String nome;
+	Integer danno;
+	Timer durata;
+	Timer frequenza;
+	
+}
