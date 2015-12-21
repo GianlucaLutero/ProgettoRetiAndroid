@@ -60,7 +60,7 @@ data_ora datetime NOT NULL,  #'YYYY-MM-DD HH:MM:SS'
 vincitore boolean NOT NULL,  # 0 = falso, altri numeri = Vero
 FOREIGN KEY (player1) REFERENCES players(nome),
 FOREIGN KEY (player2) REFERENCES players(nome),
-PRIMARY KEY (player1, player2)
+PRIMARY KEY (player1, player2, data_ora)
 );
 
 
