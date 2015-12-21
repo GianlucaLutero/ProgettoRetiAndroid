@@ -1,0 +1,15 @@
+package gameServer.ModelloImplementativo;
+
+import org.json.simple.JSONAware;
+
+public class JSONClasse implements JSONAware{
+
+	private Classe c;
+	
+	@Override
+	public String toJSONString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
