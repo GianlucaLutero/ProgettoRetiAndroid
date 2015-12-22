@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 import gameServer.ModelloImplementativo.Livello;
 import gameServer.ModelloImplementativo.Skill;
-import gameServer.ModelloImplementativo.Utente;
 
 public class DatabaseService extends DatabaseAbstractManager{
 	
@@ -143,39 +142,4 @@ public class DatabaseService extends DatabaseAbstractManager{
 		return tmp;
 	}
 	
-	
-
-	/**
-	 * Il metodo restituisce un utente dal database
-	 * 
-	 * @param Nome dell'utente
-	 * @return Utente
-	 * */
-	public Utente getUtente(String nome){
-		Utente tmp = null;
-	
-		Connection connection = null;
-		PreparedStatement statement = null;
-		ResultSet resultSet = null;
-	    
-		try{
-			connection = databaseConnect();
-			statement = connection.prepareStatement("SELECT * FROM utente WHERE email = ?;");
-			statement.setString(1, nome);
-			resultSet = statement.executeQuery();
-		
-			resultSet.next();
-			
-			tmp = new Utente();
-			
-			tmp.setEmail(nome);
-			
-		}catch(SQLException s){
-			databaseDisconnect(connection, statement, resultSet);
-			s.printStackTrace();
-		}
-	
-		return tmp;
-	}
-
 }

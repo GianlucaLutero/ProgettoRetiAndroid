@@ -2,7 +2,6 @@ package gameServer.Dispatcher;
 
 import java.io.IOException;
 
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,10 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import gameServer.ModelloImplementativo.Utente;
 import gameServer.databaseService.DatabaseService;
 
-@WebServlet("/GameServer")
 public class Dispatcher extends HttpServlet {
 
 	/**
@@ -36,7 +33,6 @@ public class Dispatcher extends HttpServlet {
 		//TO DO Gestire le richieste del client
 		DatabaseService dbservice = new DatabaseService();
 		
-		/*
 		JSONObject serviceRequest = (JSONObject)request.getAttribute("");
 		JSONArray param = (JSONArray)request.getAttribute("param");
 		
@@ -48,11 +44,12 @@ public class Dispatcher extends HttpServlet {
 			
 			//Viene richiamato l'autentication service
 			//Prova
-			Utente prova = dbservice.getUtente((String)user.get("user"));
 			
-			System.out.println(prova.getEmail());
+			
+			
+		}else{
+			
 		}
-		*/
 	}
 	
 	/**

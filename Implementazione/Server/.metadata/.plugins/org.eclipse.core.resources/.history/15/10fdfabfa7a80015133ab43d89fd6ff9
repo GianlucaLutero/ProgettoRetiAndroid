@@ -168,8 +168,6 @@ public class DatabaseService extends DatabaseAbstractManager{
 			
 			tmp = new Utente();
 			
-			tmp.setEmail(nome);
-			
 		}catch(SQLException s){
 			databaseDisconnect(connection, statement, resultSet);
 			s.printStackTrace();
