@@ -12,14 +12,10 @@ public interface SfidaInterface {
 	PlayerInterface getP2();
 
 	void setP2(PlayerInterface p2);
-
-	Date getData();
-
-	void setData(Date data);
-
-	Time getOra();
-
-	void setOra(Time ora);
+	
+	String getDataTime();
+	
+	void setDataTime(String data);
 
 	PlayerInterface getWinner();
 
