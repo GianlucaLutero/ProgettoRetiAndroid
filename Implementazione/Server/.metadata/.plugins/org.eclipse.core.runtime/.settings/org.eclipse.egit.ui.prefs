@@ -1,2 +1,5 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Non ancora completo</message>\n<message>Non ancora completo....</message>\n<message>Creato progetto GameServer che contiene l&apos;implementazione del server</message>\n</messages>
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=628f41314a20a41e62a17035254f24d776da32fe
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>- Creata la classe del Dispatcher&\#x0A;- Aggiunte le classi JSONClasse e JSONLivello</message>\n<message>Aggiornamento del DB Service, aggiunti i metodi\:&\#x0A;-insertPlayer (Da testare)&\#x0A;-updatePlayer (Da testare)&\#x0A;-getLivello   (Da testare)&\#x0A;-getSkill     (Da testare)</message>\n<message>Non ancora completo</message>\n<message>Non ancora completo....</message>\n<message>Creato progetto GameServer che contiene l&apos;implementazione del server</message>\n</messages>
 eclipse.preferences.version=1

@@ -1,5 +1,0 @@
-package gameServer.dataBaseService;
-
-public class DatabaseService {
-
-}
