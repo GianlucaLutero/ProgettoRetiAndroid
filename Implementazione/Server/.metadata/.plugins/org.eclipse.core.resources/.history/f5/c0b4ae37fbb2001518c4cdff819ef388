@@ -3,51 +3,51 @@ package gameServer.ModelloImplementativo;
 import gameServer.ModelloInterfaccia.PosizioneInterface;
 
 public class Posizione implements PosizioneInterface {
-	Double lat;
-	Double lon;
-	Double alt;
+	Float x;
+	Float y;
+	Float z;
 	
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PosizioneInterface#getX()
 	 */
 	@Override
-	public Double getLat() {
-		return lat;
+	public Float getX() {
+		return x;
 	}
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PosizioneInterface#setX(java.lang.Float)
 	 */
 	@Override
-	public void setLat(Double lat) {
-		this.lat = lat;
+	public void setX(Float x) {
+		this.x = x;
 	}
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PosizioneInterface#getY()
 	 */
 	@Override
-	public Double getLon() {
-		return lon;
+	public Float getY() {
+		return y;
 	}
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PosizioneInterface#setY(java.lang.Float)
 	 */
 	@Override
-	public void setLon(Double lon) {
-		this.lon = lon;
+	public void setY(Float y) {
+		this.y = y;
 	}
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PosizioneInterface#getZ()
 	 */
 	@Override
-	public Double getAlt() {
-		return alt;
+	public Float getZ() {
+		return z;
 	}
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PosizioneInterface#setZ(java.lang.Float)
 	 */
 	@Override
-	public void setAlt(Double alt) {
-		this.alt = alt;
+	public void setZ(Float z) {
+		this.z = z;
 	}
 	
 }

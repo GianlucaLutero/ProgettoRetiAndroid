@@ -2,6 +2,7 @@ INDEX VERSION 1.127+/home/gianluca/Università/Mobdev/Progetto/ProgettoRetiAndro
 1383787875.index
 1514218975.index
 1714592054.index
+<<<<<<< HEAD
 3104538363.index
 1815756368.index
 1436783157.index
@@ -11,8 +12,13 @@ INDEX VERSION 1.127+/home/gianluca/Università/Mobdev/Progetto/ProgettoRetiAndro
 2644541086.index
 3829351191.index
 4273304223.index
+=======
+1198206356.index
+1791498496.index
+>>>>>>> 9498f6fa11be87152c4aaa5e6f339e72e6862ca4
 1737441395.index
 4267884898.index
+3829351191.index
 939451528.index
 1791498496.index
 2739658178.index
