@@ -1,19 +1,8 @@
-<<<<<<< HEAD
 INDEX VERSION 1.127+/Users/filipposoncini/ProgettoRetiAndroid/Implementazione/Server/.metadata/.plugins/org.eclipse.jdt.core
 1749520324.index
 308786522.index
 3302703152.index
 3966064240.index
-=======
-INDEX VERSION 1.127+/home/sumuntu/Scrivania/Progetto/ProgettoRetiAndroid/Implementazione/Server/.metadata/.plugins/org.eclipse.jdt.core
-1714592054.index
-1198206356.index
-1791498496.index
-1737441395.index
-4267884898.index
-3829351191.index
->>>>>>> 9498f6fa11be87152c4aaa5e6f339e72e6862ca4
-939451528.index
 3630079742.index
 3670762751.index
 3712507179.index

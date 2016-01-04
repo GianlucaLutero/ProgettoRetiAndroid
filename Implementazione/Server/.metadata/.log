@@ -159,3 +159,9 @@ java.io.FileNotFoundException: /Users/filipposoncini/ProgettoRetiAndroid/Impleme
 	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-01-04 17:14:33.656
+!MESSAGE The archive: /home/gianluca/workspace/apache-tomcat-7.0.53/bin/bootstrap.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-01-04 17:16:02.107
+!MESSAGE The archive: /home/gianluca/workspace/apache-tomcat-7.0.53/bin/bootstrap.jar which is referenced by the classpath, does not exist.
