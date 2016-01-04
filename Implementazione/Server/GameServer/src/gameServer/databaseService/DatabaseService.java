@@ -160,7 +160,7 @@ public class DatabaseService extends DatabaseAbstractManager{
 	    
 		try{
 			connection = databaseConnect();
-			statement = connection.prepareStatement("SELECT * FROM utente WHERE email = ?;");
+			statement = connection.prepareStatement("SELECT * FROM utenti WHERE email = ?;");
 			statement.setString(1, nome);
 			resultSet = statement.executeQuery();
 		

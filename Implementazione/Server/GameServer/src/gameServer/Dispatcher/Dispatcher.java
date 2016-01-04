@@ -36,6 +36,7 @@ public class Dispatcher extends HttpServlet {
 		//TO DO Gestire le richieste del client
 		DatabaseService dbservice = new DatabaseService();
 		
+		dbservice.getUtente("test@test.com");
 		/*
 		JSONObject serviceRequest = (JSONObject)request.getAttribute("");
 		JSONArray param = (JSONArray)request.getAttribute("param");
@@ -53,6 +54,8 @@ public class Dispatcher extends HttpServlet {
 			System.out.println(prova.getEmail());
 		}
 		*/
+		
+		response.getWriter().println("culo");
 	}
 	
 	/**
