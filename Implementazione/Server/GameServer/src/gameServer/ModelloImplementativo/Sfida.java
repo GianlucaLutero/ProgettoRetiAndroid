@@ -1,7 +1,9 @@
 package gameServer.ModelloImplementativo;
 
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import gameServer.ModelloInterfaccia.PlayerInterface;
 import gameServer.ModelloInterfaccia.SfidaInterface;
@@ -9,8 +11,7 @@ import gameServer.ModelloInterfaccia.SfidaInterface;
 public class Sfida implements SfidaInterface {
 	PlayerInterface P1;
 	PlayerInterface P2;
-	Date data;
-	Time ora;
+	String dataTime;
 	PlayerInterface Winner;
 	boolean turno;
 	
@@ -46,29 +47,18 @@ public class Sfida implements SfidaInterface {
 	 * @see ModelloImplementativo.SfidaInterface#getData()
 	 */
 	@Override
-	public Date getData() {
-		return data;
+	public String getDataTime(){
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+		Date date = new Date();
+		return dateFormat.format(date);
 	}
 	/* (non-Javadoc)
-	 * @see ModelloImplementativo.SfidaInterface#setData(java.util.Date)
+	 * @see ModelloImplementativo.SfidaInterface#getWinner()
 	 */
 	@Override
-	public void setData(Date data) {
-		this.data = data;
-	}
-	/* (non-Javadoc)
-	 * @see ModelloImplementativo.SfidaInterface#getOra()
-	 */
-	@Override
-	public Time getOra() {
-		return ora;
-	}
-	/* (non-Javadoc)
-	 * @see ModelloImplementativo.SfidaInterface#setOra(java.sql.Time)
-	 */
-	@Override
-	public void setOra(Time ora) {
-		this.ora = ora;
+	public void setDataTime(String data)
+	{
+		dataTime = data;
 	}
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.SfidaInterface#getWinner()
