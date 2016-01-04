@@ -6,12 +6,12 @@ public interface PosizioneInterface {
 
 	void setLat(Double lat);
 
-	Double getLon();
+	Float getY();
 
-	void setLon(Double lon);
+	void setY(Float y);
 
-	Double getAlt();
+	Float getZ();
 
-	void setAlt(Double alt);
+	void setZ(Float z);
 
 }
