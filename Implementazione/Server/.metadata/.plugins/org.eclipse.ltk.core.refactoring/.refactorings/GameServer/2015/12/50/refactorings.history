@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;gameServer.dataBaseService&apos; to &apos;gameServer.databaseService&apos;&#x0A;- Original project: &apos;GameServer&apos;&#x0A;- Original element: &apos;GameServer/src/gameServer.dataBaseService&apos;&#x0A;- Renamed element: &apos;GameServer/src/gameServer.databaseService&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;gameServer.dataBaseService&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;gameServer.dataBaseService" name="gameServer.databaseService" qualified="false" references="true" stamp="1449677690369" textual="false" version="1.0"/>
-</session>
