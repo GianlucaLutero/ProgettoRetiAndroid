@@ -1,0 +1,11 @@
+127.0.0.1 - - [12/May/2014:11:21:21 +0200] "GET /examples HTTP/1.1" 302 -
+127.0.0.1 - - [12/May/2014:11:21:21 +0200] "GET /examples/ HTTP/1.1" 200 1285
+127.0.0.1 - - [12/May/2014:11:21:21 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+127.0.0.1 - - [12/May/2014:11:21:30 +0200] "GET /examples/jsp HTTP/1.1" 302 -
+127.0.0.1 - - [12/May/2014:11:21:30 +0200] "GET /examples/jsp/ HTTP/1.1" 200 19573
+127.0.0.1 - - [12/May/2014:11:21:30 +0200] "GET /examples/jsp/images/execute.gif HTTP/1.1" 200 1242
+127.0.0.1 - - [12/May/2014:11:21:30 +0200] "GET /examples/jsp/images/code.gif HTTP/1.1" 200 292
+127.0.0.1 - - [12/May/2014:11:21:30 +0200] "GET /examples/jsp/images/return.gif HTTP/1.1" 200 1231
+127.0.0.1 - - [12/May/2014:11:21:34 +0200] "GET /examples/jsp/jsp2/el/basic-arithmetic.jsp HTTP/1.1" 200 1582
+127.0.0.1 - - [12/May/2014:11:21:47 +0200] "GET /examples/jsp/tagplugin/foreach.html HTTP/1.1" 200 1265
+127.0.0.1 - - [12/May/2014:11:21:49 +0200] "GET /examples/jsp/tagplugin/foreach.jsp.html HTTP/1.1" 200 1829
