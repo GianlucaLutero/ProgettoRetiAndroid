@@ -1,0 +1,37 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Progetto\\ programmazione di sistemi mobili}
+
+\begin{document}
+\maketitle
+Si vuole realizzare un gioco su piattaforma Android. Il gioco si presenterà al giocatore, dopo una fase di login o registrazione, mostrando una mappa della zona in cui si trova e altri giocatori nelle vicinanze. Il giocatore potrà interagire con gli altri giocatori sfidandoli a duello.  
+\section*{Funzionalità}
+\subsection*{Login o registrazione}
+L'applicazione prevede una fase di registrazione o login per accedere alla schermata di gioco. Una volta effettuato il login il giocatore dovrà scegliere quale personaggio utilizzare all'interno del gioco oppure crearne uno nuovo. Una volta terminata questa operazione al giocatore verrà mostrata la mappa di gioco.
+\subsection*{Mappa di gioco}
+Dopo la scelta del personaggio verrà mostrata la mappa alle coordinate del giocatore più gli utenti nelle vicinanze. Le opzioni e le azioni di gioco saranno gestite da bottoni sulla mappa, in particolare l'azione di sfida. 
+\subsection*{Richiesta di sfida}
+Una volta selezionato l'avversario e premuto il bottone sfida verrà mandata una richiesta alla quale dovrà accettare per entrare nel duello o rifiutare.
+\subsection*{Duello}
+Una volta accettata la sfida verrà aperta una nuova activity in cui verranno mostrati i due giocatori con le loro caratteristiche e le abilità da usare. Il duello si svolgerà a turni alterni dove in ogni turno si potrà scegliere se attaccare o usare un'abilità specifica del personaggio. Vince il giocatore che riduce a 0 i punti vita dell'avversario per primo.
+\subsection*{Creazione del personaggio}
+Una volta premuto il bottone di creazione nuovo personaggio sarà possibile selezionare uno tra i possibili personaggi e assegnargli un nome che lo identificherà nell'applicazione.
+\subsection*{Comunicazione con il server}
+Avviata l'applicazione un servizio in background riceverà le nuove posizioni degli utenti e le richieste di sfida.
+\section*{Componenti di Android previsti}
+\begin{itemize}
+\item Service che gestisce la comunicazione con il server
+\item Geolocalizzazione per la posizione dell'utente
+\item Stringhe JSON per passare i dati dal server all'applicazione
+\item Mappe di Google per l'interfaccia di gioco
+\item Storage locale per opzioni e dati salvati in locale
+\item Notifiche
+\end{itemize}
+
+\end{document}
