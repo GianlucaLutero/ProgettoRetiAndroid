@@ -20,16 +20,17 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <ScrollView
+    <FrameLayout
         android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/sfondologin">
+        android:background="@drawable/loginin">
 
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="170dp"
             android:orientation="vertical">
 
             <android.support.design.widget.TextInputLayout
@@ -72,8 +73,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="#31ffffff" />
 
         </LinearLayout>
-    </ScrollView>
+    </FrameLayout>
 </LinearLayout>
