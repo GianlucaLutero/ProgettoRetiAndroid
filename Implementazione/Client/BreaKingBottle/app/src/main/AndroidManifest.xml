@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SceltaPersonaggio"
+            android:label="@string/title_activity_scelta_personaggio"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SignIn"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

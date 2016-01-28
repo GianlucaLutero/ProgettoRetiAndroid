@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="bb.breakingbottle.SignIn"
+    tools:showIn="@layout/activity_sign_in"
+    android:background="@drawable/sceltapgbackground">
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Nome"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="0.81"
+        android:textColor="#000000"
+        android:textColorHint="#797979" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Cognome"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:textColor="#000000"
+        android:textColorHint="#797979"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:hint="Email"
+        android:id="@+id/editText3"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.81"
+        android:textColor="#000000"
+        android:textColorHint="#797979"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="Password"
+        android:id="@+id/editText4"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.81"
+        android:textColor="#000000"
+        android:textColorHint="#797979"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="Conferma password"
+        android:id="@+id/editText5"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.81"
+        android:textColor="#000000"
+        android:textColorHint="#797979"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:hint="Data di nascita"
+        android:id="@+id/editText6"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.81"
+        android:textColor="#000000"
+        android:textColorHint="#797979"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Città"
+        android:id="@+id/editText8"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.81"
+        android:textColor="#000000"
+        android:textColorHint="#797979"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:hint="Indirizzo"
+        android:id="@+id/editText7"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.81"
+        android:textColor="#000000"
+        android:textColorHint="#797979"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@string/large_text" />
+
+</LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
