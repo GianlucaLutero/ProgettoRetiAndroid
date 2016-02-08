@@ -1,5 +1,8 @@
 package gameServer.databaseService;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -177,5 +180,94 @@ public class DatabaseService extends DatabaseAbstractManager{
 	
 		return tmp;
 	}
+	
+	/**
+	 * Inserisce un nuovo utente nel database 
+	 * */
+	public boolean insertUtente(String email,String password){
+	      
+			Connection connection = null;
+			PreparedStatement statement = null;
+			
+			//Criptare password
+			
+			try{
+				connection = databaseConnect();
+				statement = connection.prepareStatement("insert into utenti values(?,sha1(?))");
+				statement.setString(1,email);
+				statement.setString(2,password);
+				statement.executeUpdate();
+			}catch(SQLException s){
+			    databaseDisconnect(connection,statement);
+			    s.printStackTrace();
+			    return false;
+			}
+			
+			return true;
+	}
+	
+	public boolean loginUtente(String email,String password){
+		
+		String control = null;
+		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+	    
+		try{
+			connection = databaseConnect();
+			statement = connection.prepareStatement("SELECT * FROM utenti WHERE email = ?;");
+			statement.setString(1, email);
+			resultSet = statement.executeQuery();
+		
+			resultSet.next();
+			
+			control = resultSet.getString("pass");			
+			
+			System.out.println("DB:"+control);
+			System.out.println("USER:"+cripta(password));
+			
+			if(control.equals(cripta(password))){
+				return true;
+			}
+			
+		}catch(SQLException s){
+			databaseDisconnect(connection, statement, resultSet);
+			s.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+		e.printStackTrace();
+	    }	
+		
+		return false;	
+	
+	}
+	
+	/**
+	 * Metodo per criptare stringhe con algoritmo sha-1
+	 * 
+	 * @param Stringa s da criptare
+	 * */
+	private String cripta(String s) throws NoSuchAlgorithmException{
+		  MessageDigest mess = null;
+		    mess = MessageDigest.getInstance("SHA-1");
+		    mess.reset();
+		    try {
+				mess.update(s.getBytes("UTF-8"));
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		    
+		    byte[] dig = mess.digest();
+		    
+		    StringBuffer sb = new StringBuffer();
+	        for (int i = 0; i < dig.length; i++) {
+	          sb.append(Integer.toString((dig[i] & 0xff) + 0x100, 16).substring(1));
+	        }
+		    
+		    System.out.println(sb.toString());
+		    
+		    return sb.toString();
+	}
+	
 
 }
