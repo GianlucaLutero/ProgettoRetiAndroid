@@ -60,10 +60,18 @@ public class AuthenticationService {
 	 *          false altrimenti
 	 */
 	public boolean logOut(DatabaseService db,String email){
-		Utente tmp = db.getUtente(email);
+		//Utente tmp = db.getUtente(email);
 
-		if(utentiAttivi.get(tmp.getEmail()) != null){
-			utentiAttivi.remove(tmp.getEmail());
+		String session = utentiAttivi.get(email);
+		
+		System.out.println("Utente "+email+" sessione  "+session+" in logout ........");
+		
+		stampaUtenti();
+		
+		
+		if(session != null){
+			System.out.println("Utente: "+email+" rimosso");
+			utentiAttivi.remove(email);
 			return true;
 		}
 
