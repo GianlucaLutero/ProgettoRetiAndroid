@@ -5,10 +5,12 @@ import gameServer.ModelloInterfaccia.PosizioneInterface;
 
 public class Player implements PlayerInterface {
 	String nome;
-	Integer vita;
-	Integer vitalvl;
+	String classe;
+	int vita;
+	int vitalvl;
+	int lv;
 	PosizioneInterface coordinate;
-	Integer exp;
+	int exp;
 	
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PlayerInterface#getNome()
@@ -82,5 +84,19 @@ public class Player implements PlayerInterface {
 	}
 	
 	
+	public int getLv() {
+		return lv;
+	}
+	
+	public void setLv(int lv) {
+		this.lv = lv;
+	}
 
+	public void setClasse(String classe) {
+		this.classe = classe;
+	}
+	
+	public String getClasse() {
+		return classe;
+	}
 }

@@ -7,8 +7,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import gameServer.ModelloImplementativo.Livello;
+import gameServer.ModelloImplementativo.Player;
 import gameServer.ModelloImplementativo.Skill;
 import gameServer.ModelloImplementativo.Utente;
 
@@ -240,6 +242,37 @@ public class DatabaseService extends DatabaseAbstractManager{
 		
 		return false;	
 	
+	}
+	
+	public ArrayList<Player> getPlayer(String email){
+		Player tmp = null;
+		ArrayList<Player> plist = new ArrayList<>();
+		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+	    
+		try{
+			connection = databaseConnect();
+			statement = connection.prepareStatement("SELECT * FROM players WHERE email = ?;");
+			statement.setString(1, email);
+			resultSet = statement.executeQuery();
+		
+			while(resultSet.next()){
+				tmp = new Player();
+
+				tmp.setNome(resultSet.getString("nome"));
+				tmp.setExp(resultSet.getInt("esperienza"));
+				tmp.setLv(resultSet.getInt("livello"));
+                tmp.setClasse(resultSet.getString("nome_classe"));
+				plist.add(tmp);
+			}
+		}catch(SQLException s){
+			databaseDisconnect(connection, statement, resultSet);
+			s.printStackTrace();
+		}
+	
+		return plist;
 	}
 	
 	/**

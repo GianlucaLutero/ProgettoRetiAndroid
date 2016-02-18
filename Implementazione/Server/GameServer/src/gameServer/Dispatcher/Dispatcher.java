@@ -1,6 +1,7 @@
 package gameServer.Dispatcher;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import gameServer.AuthenticationService.AuthenticationService;
+import gameServer.ModelloImplementativo.JSONPlayer;
+import gameServer.ModelloImplementativo.Player;
 import gameServer.ModelloImplementativo.Utente;
 import gameServer.databaseService.DatabaseService;
 
@@ -39,6 +42,8 @@ public class Dispatcher extends HttpServlet {
 		//TO DO Gestire le richieste del client
 		String email;
 		String password;
+		String nome;
+		String classe;
 		//dbservice.getUtente("test@test.com");
 		/*
 		String email = (String)request.getParameter("email");
@@ -49,6 +54,7 @@ public class Dispatcher extends HttpServlet {
 		*/
 		
 		String service = (String)request.getParameter("service");
+		System.out.println(service);
 		
 		switch (service) {
 		case "signin":
@@ -100,6 +106,27 @@ public class Dispatcher extends HttpServlet {
 			}else{
 				response.getWriter().println("ERRORE LOGOUT");
 			}
+			break;
+		case "create":
+			email = (String)request.getParameter("email");
+			nome = (String)request.getParameter("nome");
+			classe = (String)request.getParameter("classe");
+			System.out.println("Nuovo player:"+nome+","+classe+","+email);
+			dbservice.insertPlayer(nome, classe, email);
+			response.getWriter().println("CREATO");
+			
+			break;
+			
+		case "get_players":
+			email = (String)request.getParameter("email");
+			ArrayList<Player> p = dbservice.getPlayer(email);
+			JSONArray players = new JSONArray();
+			
+			for(Player pl:p){
+			   System.out.println("Trovato player per "+email+" :"+pl.getNome());
+			   players.add(new JSONPlayer(pl));
+			}
+			response.getWriter().println(players.toString() );
 			break;
 		default:
 			break;
