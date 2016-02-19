@@ -8,9 +8,20 @@ public class Player implements PlayerInterface {
 	String classe;
 	int vita;
 	int vitalvl;
+	int attacco;
+	int difesa;
 	int lv;
-	PosizioneInterface coordinate;
+	Posizione coordinate;
 	int exp;
+	
+	
+	public Player() {
+	    this.coordinate = new Posizione();
+	    
+	    this.coordinate.setLat(0d);
+	    this.coordinate.setLon(0d);
+	}
+	
 	
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PlayerInterface#getNome()
@@ -66,7 +77,7 @@ public class Player implements PlayerInterface {
 	 */
 	@Override
 	public void setCoordinate(PosizioneInterface coordinate) {
-		this.coordinate = coordinate;
+		this.coordinate = (Posizione)coordinate;
 	}
 	/* (non-Javadoc)
 	 * @see ModelloImplementativo.PlayerInterface#getExp()
@@ -98,5 +109,20 @@ public class Player implements PlayerInterface {
 	
 	public String getClasse() {
 		return classe;
+	}
+	
+	public int getAttacco() {
+		return attacco;
+	}
+	public void setAttacco(int attacco) {
+		this.attacco = attacco;
+	}
+	
+	public int getDifesa() {
+		return difesa;
+	}
+	
+	public void setDifesa(int difesa) {
+		this.difesa = difesa;
 	}
 }

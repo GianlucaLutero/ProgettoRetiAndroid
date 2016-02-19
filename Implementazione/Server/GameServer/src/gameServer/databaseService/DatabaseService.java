@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import gameServer.ModelloImplementativo.Classe;
 import gameServer.ModelloImplementativo.Livello;
 import gameServer.ModelloImplementativo.Player;
 import gameServer.ModelloImplementativo.Skill;
@@ -19,11 +20,8 @@ public class DatabaseService extends DatabaseAbstractManager{
 	/*
 	 * TO DO 
 	 * 
-	 *  -loginUtente
-	 *  -logoutUtente
 	 *  -checkinPlayer
 	 *  -checkoutPlayer
-	 *  -getPlayer
 	 *  -getSkill
 	 * */
 
@@ -273,6 +271,36 @@ public class DatabaseService extends DatabaseAbstractManager{
 		}
 	
 		return plist;
+	}
+	
+	public Classe getClass(String nome){
+		Classe tmp = null;
+		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+	    
+		try{
+			connection = databaseConnect();
+			statement = connection.prepareStatement("SELECT * FROM classi WHERE nome = ?;");
+			statement.setString(1, nome);
+			resultSet = statement.executeQuery();
+		
+			resultSet.next();
+			
+			tmp = new Classe();
+			
+			tmp.setNome(nome);
+			tmp.setIndAttacco(resultSet.getFloat("ind_att"));
+			tmp.setIndDifesa(resultSet.getFloat("ind_dif"));
+			tmp.setIndxVita(resultSet.getFloat("ind_vita"));
+			
+		}catch(SQLException s){
+			databaseDisconnect(connection, statement, resultSet);
+			s.printStackTrace();
+		}
+	
+		return tmp;
 	}
 	
 	/**

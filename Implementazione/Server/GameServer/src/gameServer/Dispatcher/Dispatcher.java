@@ -12,8 +12,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import gameServer.AuthenticationService.AuthenticationService;
+import gameServer.CoreAppService.CoreAppService;
 import gameServer.ModelloImplementativo.JSONPlayer;
 import gameServer.ModelloImplementativo.Player;
+import gameServer.ModelloImplementativo.Posizione;
 import gameServer.ModelloImplementativo.Utente;
 import gameServer.databaseService.DatabaseService;
 
@@ -26,6 +28,7 @@ public class Dispatcher extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final DatabaseService dbservice = new DatabaseService();
 	private final AuthenticationService aservice = new AuthenticationService();
+	private final CoreAppService caservice = new CoreAppService();
 
 	/**
 	 *  Gestisce le richieste Http get
@@ -44,16 +47,12 @@ public class Dispatcher extends HttpServlet {
 		String password;
 		String nome;
 		String classe;
-		//dbservice.getUtente("test@test.com");
-		/*
-		String email = (String)request.getParameter("email");
-		String password =(String)request.getParameter("password");
-		
-		System.out.println(email);
-		System.out.println(password);
-		*/
-		
+		Double lat;
+		Double lon;
 		String service = (String)request.getParameter("service");
+		JSONArray players;
+		int exp;
+		
 		System.out.println(service);
 		
 		switch (service) {
@@ -90,7 +89,7 @@ public class Dispatcher extends HttpServlet {
 				AuthenticationService.stampaUtenti();
 				response.getWriter().println(AuthenticationService.getSessionId(u));
 			}else{
-				response.getWriter().println("Errore login");
+				response.getWriter().print("Errore login");
 			}
 
 			break;
@@ -120,7 +119,7 @@ public class Dispatcher extends HttpServlet {
 		case "get_players":
 			email = (String)request.getParameter("email");
 			ArrayList<Player> p = dbservice.getPlayer(email);
-			JSONArray players = new JSONArray();
+			players = new JSONArray();
 			
 			for(Player pl:p){
 			   System.out.println("Trovato player per "+email+" :"+pl.getNome());
@@ -128,7 +127,37 @@ public class Dispatcher extends HttpServlet {
 			}
 			response.getWriter().println(players.toString() );
 			break;
+
+		case "near_player":
+			nome = (String)request.getParameter("nome");
+			classe = (String)request.getParameter("classe");
+		    lat = Double.valueOf(request.getParameter("lat"));
+		    lon = Double.valueOf(request.getParameter("lon"));
+		    exp = Integer.valueOf(request.getParameter("exp"));    
+		    Posizione pos = new Posizione();
+		    pos.setLat(lat);
+		    pos.setLon(lon);
+		    
+		    Player pl = new Player();
+		    pl.setNome(nome);
+		    pl.setClasse(classe);
+		    pl.setCoordinate(pos);
+		    pl.setExp(exp);
+		    
+		    caservice.setActivePlayer(pl, dbservice);
+		    
+		    ArrayList<Player> list = caservice.getActivePlayer();
+            players = new JSONArray();
+			
+			for(Player p1:list){
+			   System.out.println("Trovato player per "+nome+" :"+p1.getNome());
+			   players.add(new JSONPlayer(p1));
+			}
+			response.getWriter().println(players.toString() );
+			
+			break;
 		default:
+			response.getWriter().println("Servizio non disponible o non esistente");
 			break;
 		}
 

@@ -14,6 +14,7 @@ public class JSONPlayer implements JSONAware{
 		p.setLv(pl.getLv());
 		p.setNome(pl.getNome());
 		p.setClasse(pl.getClasse());
+		p.setCoordinate(pl.getCoordinate());
 	}
 	
 	@Override
@@ -44,6 +45,18 @@ public class JSONPlayer implements JSONAware{
         sb.append(JSONObject.escape("classe"));
         sb.append(":");
         sb.append("\""+p.getClasse()+"\"");
+        
+        sb.append(",");
+        
+        sb.append(JSONObject.escape("lat"));
+        sb.append(":");
+        sb.append(p.getCoordinate().getLat());
+        
+        sb.append(",");
+        
+        sb.append(JSONObject.escape("lng"));
+        sb.append(":");
+        sb.append(p.getCoordinate().getLon());
         
 		sb.append("}");
 		
