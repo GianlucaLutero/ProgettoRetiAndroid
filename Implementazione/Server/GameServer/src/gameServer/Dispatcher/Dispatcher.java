@@ -47,11 +47,15 @@ public class Dispatcher extends HttpServlet {
 		String password;
 		String nome;
 		String classe;
+		String playerAtt;
+		String playerDef;
 		Double lat;
 		Double lon;
+		
 		String service = (String)request.getParameter("service");
 		JSONArray players;
 		int exp;
+		int lv;
 		
 		System.out.println(service);
 		
@@ -133,7 +137,8 @@ public class Dispatcher extends HttpServlet {
 			classe = (String)request.getParameter("classe");
 		    lat = Double.valueOf(request.getParameter("lat"));
 		    lon = Double.valueOf(request.getParameter("lon"));
-		    exp = Integer.valueOf(request.getParameter("exp"));    
+		    exp = Integer.valueOf(request.getParameter("exp")); 
+		    lv = Integer.valueOf(request.getParameter("lv"));
 		    Posizione pos = new Posizione();
 		    pos.setLat(lat);
 		    pos.setLon(lon);
@@ -143,6 +148,7 @@ public class Dispatcher extends HttpServlet {
 		    pl.setClasse(classe);
 		    pl.setCoordinate(pos);
 		    pl.setExp(exp);
+		    pl.setLv(lv);
 		    
 		    caservice.setActivePlayer(pl, dbservice);
 		    
@@ -156,6 +162,36 @@ public class Dispatcher extends HttpServlet {
 			response.getWriter().println(players.toString() );
 			
 			break;
+		
+		case "logout_player":
+			nome = (String)request.getParameter("nome");
+			
+		    boolean logoutPlayer = caservice.removePlayer(nome);
+		    
+		    if(logoutPlayer){
+		    	response.getWriter().println("PLAYER: "+nome+" LOGGED OUT");	
+		    }else{
+		    	response.getWriter().println("ERRORE LOGOUT PLAYER");
+		    }
+			break;
+			
+		case "attack":
+			
+			playerAtt = (String)request.getParameter("attacker");
+			playerDef = (String)request.getParameter("defender");
+			
+		    caservice.attackPlayer(playerAtt, playerDef, dbservice);
+		    
+		    ArrayList<Player> updatedPlayer = caservice.getActivePlayer();
+			players = new JSONArray();
+			
+			for(Player p1:updatedPlayer){
+				   players.add(new JSONPlayer(p1));
+			}
+		
+			response.getWriter().println(players.toString() );
+			break;
+			
 		default:
 			response.getWriter().println("Servizio non disponible o non esistente");
 			break;
