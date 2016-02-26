@@ -42,7 +42,6 @@ public class Dispatcher extends HttpServlet {
 	protected void doGet(HttpServletRequest request,HttpServletResponse response)
 			throws IOException{
 
-		//TO DO Gestire le richieste del client
 		String email;
 		String password;
 		String nome;
@@ -180,9 +179,11 @@ public class Dispatcher extends HttpServlet {
 			playerAtt = (String)request.getParameter("attacker");
 			playerDef = (String)request.getParameter("defender");
 			
-		    caservice.attackPlayer(playerAtt, playerDef, dbservice);
+			if(!playerAtt.equals(playerDef)){
+				caservice.attackPlayer(playerAtt, playerDef, dbservice);
+			}
 		    
-		    ArrayList<Player> updatedPlayer = caservice.getActivePlayer();
+			ArrayList<Player> updatedPlayer = caservice.getActivePlayer();
 			players = new JSONArray();
 			
 			for(Player p1:updatedPlayer){

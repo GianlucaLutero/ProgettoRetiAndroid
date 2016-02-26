@@ -89,6 +89,8 @@ public class CoreAppService {
     	 Player attacker = new Player();
     	 Player defender = new Player();
     	 
+    
+    	 
     	 System.out.println("Inizio battaglia tra "+attack+" e "+defend);
     	 
     	 for(Player tmp:activePlayer){
