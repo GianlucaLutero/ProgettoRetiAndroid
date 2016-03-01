@@ -24,6 +24,7 @@ public class CoreAppService {
     	 Player active = new Player();
 
     	 try{
+    		 
     		 Classe cl = db.getClass(p.getClasse());
     		 Livello lv = db.getLivello(p.getLv());
 

@@ -23,9 +23,9 @@
 \usepackage{chngpage}
 \usepackage{hyperref}
 
-\title{\textbf{Relazione progetto \\ Reti di calcolatori}}
+\title{\textbf{Relazione progetto \\ Reti di calcolatori \\ GameServer}}
 \author{Gianluca Lutero \\  Nicola Mazzara \\ Filippo Soncini}
-\date{}
+
 
 \lstnewenvironment{javacode}
 	 { \vspace{4mm}
@@ -236,4 +236,23 @@ Il protocollo di login utilizzato impone che le password vengano salvate e confr
 
 \subsubsection{Sicurezza del server}
 Il server è strutturato in modo tale da avere un'interfaccia con l'esterno, il dispatcher. che ne maschera la struttura interna e controlla che le richieste siano ben formate. Inoltre nel server il database service maschera e gestisce le richieste al database.
+
+\section{Sviluppi futuri e conclusioni}
+\subsection{Sviluppi futuri}
+Vista la struttura del server i possibili sviluppi futuri riguardano maggiormente nuove funzionalità implementate nel gioco, come nuove classi o aggiunta dell'inventario. Per quanto riguarda la struttura stessa del server i possibili sviluppi futuri riguardano:
+\begin{itemize}
+\item Utilizzare il protocollo \texttt{HTTPS} anzichè \texttt{HTTP} per rendere sicura la comunicazione tra client e server, falla attuale del progetto
+
+\item Implementare il logout automatico dei giocatori inattivi
+ 
+\item Controllare la validità delle email fornite per garantire l'identità dell'utente
+
+\item Funzionalità di recupero password dimenticate
+
+\item Maggiore controllo sulle operazioni effettuate dall'utente per evitare il fenomeno di cheating 
+\end{itemize} 
+
+
+\subsection{Conclusioni}
+Il progetto sviluppato ci ha portato ad affrontare le problematiche legate alla gestione di un server di gioco real-time, per il quale si è dovuto trovare prima di tutto soluzioni per gestire i vari client che condividevano i dati di gioco e rendere persistenti le loro operazioni. Inoltre si è dovuto trovare il modo per mascherare la struttura interna del server per mantenere la compatibilità tra i vari client.
 \end{document}
