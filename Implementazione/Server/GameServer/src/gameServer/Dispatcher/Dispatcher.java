@@ -134,34 +134,34 @@ public class Dispatcher extends HttpServlet {
 		case "near_player":
 			nome = (String)request.getParameter("nome");
 			classe = (String)request.getParameter("classe");
-		    lat = Double.valueOf(request.getParameter("lat"));
-		    lon = Double.valueOf(request.getParameter("lon"));
-		    exp = Integer.valueOf(request.getParameter("exp")); 
-		    lv = Integer.valueOf(request.getParameter("lv"));
-		    Posizione pos = new Posizione();
-		    pos.setLat(lat);
-		    pos.setLon(lon);
-		    
-		    Player pl = new Player();
-		    pl.setNome(nome);
-		    pl.setClasse(classe);
-		    pl.setCoordinate(pos);
-		    pl.setExp(exp);
-		    pl.setLv(lv);
-		    
-		    caservice.setActivePlayer(pl, dbservice);
-		    
-		    ArrayList<Player> list = caservice.getActivePlayer();
-            players = new JSONArray();
-			
+			lat = Double.valueOf(request.getParameter("lat"));
+			lon = Double.valueOf(request.getParameter("lon"));
+			exp = Integer.valueOf(request.getParameter("exp")); 
+			lv = Integer.valueOf(request.getParameter("lv"));
+			Posizione pos = new Posizione();
+			pos.setLat(lat);
+			pos.setLon(lon);
+
+			Player pl = new Player();
+			pl.setNome(nome);
+			pl.setClasse(classe);
+			pl.setCoordinate(pos);
+			pl.setExp(exp);
+			pl.setLv(lv);
+
+			caservice.setActivePlayer(pl, dbservice);
+
+			ArrayList<Player> list = caservice.getActivePlayer();
+			players = new JSONArray();
+
 			for(Player p1:list){
-			   System.out.println("Trovato player per "+nome+" :"+p1.getNome());
-			   players.add(new JSONPlayer(p1));
+				System.out.println("Trovato player per "+nome+" :"+p1.getNome());
+				players.add(new JSONPlayer(p1));
 			}
 			response.getWriter().println(players.toString() );
-			
+
 			break;
-		
+
 		case "logout_player":
 			nome = (String)request.getParameter("nome");
 			

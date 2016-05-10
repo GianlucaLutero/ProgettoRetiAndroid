@@ -258,11 +258,19 @@ public class DatabaseService extends DatabaseAbstractManager{
 		
 			while(resultSet.next()){
 				tmp = new Player();
+				
+				Livello level = new Livello();
+				Classe classPg = new Classe();
+				
+				level = getLivello(resultSet.getInt("livello"));
+				classPg = getClass(resultSet.getString("nome_classe"));
 
 				tmp.setNome(resultSet.getString("nome"));
 				tmp.setExp(resultSet.getInt("esperienza"));
 				tmp.setLv(resultSet.getInt("livello"));
                 tmp.setClasse(resultSet.getString("nome_classe"));
+                tmp.setVita((int)(classPg.getIndxVita()*level.getVita()));
+                
 				plist.add(tmp);
 			}
 		}catch(SQLException s){
@@ -312,6 +320,7 @@ public class DatabaseService extends DatabaseAbstractManager{
 		  MessageDigest mess = null;
 		    mess = MessageDigest.getInstance("SHA-1");
 		    mess.reset();
+		 
 		    try {
 				mess.update(s.getBytes("UTF-8"));
 			} catch (UnsupportedEncodingException e) {

@@ -8,11 +8,12 @@ public class JSONPlayer implements JSONAware{
 	private Player p;
 	
 	public JSONPlayer(Player pl){
-		p= new Player();
+		p = new Player();
 		
 		p.setExp(pl.getExp());
 		p.setLv(pl.getLv());
 		p.setNome(pl.getNome());
+		p.setVita(pl.getVita());
 		p.setClasse(pl.getClasse());
 		p.setCoordinate(pl.getCoordinate());
 	}
@@ -57,6 +58,13 @@ public class JSONPlayer implements JSONAware{
         sb.append(JSONObject.escape("lng"));
         sb.append(":");
         sb.append(p.getCoordinate().getLon());
+        
+        sb.append(",");
+        
+        sb.append(JSONObject.escape("vita"));
+        sb.append(":");
+        sb.append(p.getVita());
+        
         
 		sb.append("}");
 		
